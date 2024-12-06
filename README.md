@@ -3,6 +3,19 @@
 The `Timer` is a timer class
 It demonstrates how to create a countdown timer using threading for real-time display updates.
 
+## Feature
+
+- Countdown Timer: Implements a dynamic countdown.
+- Real-Time Updates: Displays updates in real time.
+- Threading: Uses threading for non-blocking execution.
+
+## Installation
+You can install Flet Router using pip:
+
+```bash
+pip install git+https://github.com/omamkaz/flet-timer.git
+```
+
 ## Usage
 
 Here's an example that demonstrates how to use the `Timer`.
