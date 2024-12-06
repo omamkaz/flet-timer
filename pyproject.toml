@@ -17,7 +17,7 @@ packages = [{ include = "flet_timer", from = "src" }]
 
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.8,<4.0"
 
 
 [build-system]
