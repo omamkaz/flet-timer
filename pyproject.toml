@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "ftimer"
+version = "1.0.0"
+description = "It demonstrates how to create a countdown timer using threading for real-time display updates."
+authors = ["Osama Mohammed <omamkaz@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+keywords = [
+    "time",
+    "timer",
+    "countdown",
+    "flet",
+    "toolkit",
+    "tools"
+]
+packages = [{ include = "flet_timer", from = "src" }]
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
