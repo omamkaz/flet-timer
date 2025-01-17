@@ -1,4 +1,4 @@
-# Flet Timer
+# Flet Timer v1.0.2
  
 The `Timer` is a timer class
 It demonstrates how to create a countdown timer using threading for real-time display updates.
@@ -18,24 +18,19 @@ pip install git+https://github.com/omamkaz/flet-timer.git
 
 ## Usage
 
-Here's an example that demonstrates how to use the `Timer`.
+Here's an example that demonstrates how to use the `Timer` and `debounce`.
 
-First, let's define a callback function that will execute at a specified interval:
-
+### debounce
 ```python
-def update_time():
-    timer_txt.value = datetime.now().strftime("%H:%M:%S")
-    page.update()
+from flet_timer import debounce
+
+
+@debounce(0.3)
+def func(*args, **kwargs) -> None:
+    print("Hi...")
 ```
 
-Next, create the `Timer` object with the desired interval in seconds, a name, and the callback:
-
-```python
-timer = Timer()
-```
-
-The complete example code would look like this:
-
+### Timer
 ```python
 import flet as ft
 from flet_timer import Timer

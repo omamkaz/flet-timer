@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "flet-timer"
-version = "1.0.0"
+version = "1.0.2"
 description = "It demonstrates how to create a countdown timer using threading for real-time display updates."
 authors = ["Osama Mohammed <omamkaz@gmail.com>"]
 readme = "README.md"

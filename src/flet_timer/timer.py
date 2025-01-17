@@ -1,5 +1,6 @@
-import typing
 import threading
+import typing
+from functools import wraps
 
 
 class Timer:
@@ -28,7 +29,7 @@ class Timer:
         timer = Timer(callback=update_time)
 
         timer_txt = ft.Text(
-            value=datetime.now().strftime("%H:%M:%S"), 
+            value=datetime.now().strftime("%H:%M:%S"),
             text_align="center",
             size=24
         )
@@ -57,11 +58,9 @@ class Timer:
     ```
     """
 
-    def __init__(self, 
-                 interval: float = 1, 
-                 callback: typing.Callable = None, 
-                 *args, 
-                 **kwargs):
+    def __init__(
+        self, interval: float = 1, callback: typing.Callable = None, *args, **kwargs
+    ):
 
         self.interval = interval
         self.callback = callback
@@ -95,7 +94,7 @@ class Timer:
     def resume(self):
         with self.pause_condition:
             self.paused = False
-             # Notify the condition to resume the loop
+            # Notify the condition to resume the loop
             self.pause_condition.notify()
 
     def tick(self):
@@ -111,3 +110,20 @@ class Timer:
                 print(e)
 
             threading.Event().wait(self.interval)
+
+
+class debounce:  # noqa
+    def __init__(self, timeout: float = 1):
+        self.timeout = timeout
+        self._timer = None
+
+    def __call__(self, func: typing.Callable):
+        @wraps(func)
+        def decorator(*args, **kwargs):
+            if self._timer is not None:
+                self._timer.cancel()
+
+            self._timer = threading.Timer(self.timeout, func, args=args, kwargs=kwargs)
+            self._timer.start()
+
+        return decorator
