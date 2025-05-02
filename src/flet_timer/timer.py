@@ -63,6 +63,7 @@ class Timer:
         interval: float = 1,
         callback: typing.Callable = None,
         on_error: typing.Callable[[str], None] = None,
+        wait_on_start: bool = True,
         *args,
         **kwargs
     ):
@@ -70,6 +71,7 @@ class Timer:
         self.interval = interval
         self.callback = callback
         self.on_error = on_error
+        self.wait_on_start = wait_on_start
         self.active = False
         self.paused = False
         self.pause_condition = threading.Condition(threading.Lock())
@@ -85,7 +87,8 @@ class Timer:
         self.active = True
         self.paused = False
         if not self.th.is_alive():
-            threading.Event().wait(self.interval)  # wait before run callback
+            if self.wait_on_start:
+                threading.Event().wait(self.interval)  # wait before run callback
             self.th = threading.Thread(target=self.tick, daemon=True)
             self.th.start()
 
