@@ -13,13 +13,13 @@ def main(page: ft.Page):
     page.window.height = 600
 
     def update_time():
-        timer_txt.value = datetime.now().strftime("%H:%M:%S")
+        timer_txt.value = datetime.now().strftime("%r")
         page.update()
 
     timer = Timer(callback=update_time)
 
     timer_txt = ft.Text(
-        value=datetime.now().strftime("%H:%M:%S"), text_align="center", size=24
+        value=datetime.now().strftime("%r"), text_align="center", size=24
     )
 
     page.add(

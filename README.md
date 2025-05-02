@@ -1,4 +1,4 @@
-# Flet Timer v1.0.2
+# Flet Timer v1.1.0
  
 The `Timer` is a timer class
 It demonstrates how to create a countdown timer using threading for real-time display updates.
@@ -85,3 +85,8 @@ ft.app(target=main)
 ## Output of above code
 
 ![Example 1](media/example_1.png)
+
+
+## Contributing
+
+Pull requests and suggestions are welcome! Open an issue first to discuss any major changes.
