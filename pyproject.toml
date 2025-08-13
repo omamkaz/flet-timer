@@ -2,7 +2,7 @@
 name = "flet-timer"
 version = "1.1.0"
 description = "It demonstrates how to create a countdown timer using threading for real-time display updates."
-authors = ["Osama Mohammed <omamkaz@gmail.com>"]
+authors = ["Osama Mohammed <osamalzabidi@gmail.com>"]
 readme = "README.md"
 license = "MIT"
 keywords = [

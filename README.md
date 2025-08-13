@@ -13,7 +13,7 @@ It demonstrates how to create a countdown timer using threading for real-time di
 You can install Flet Timer using pip:
 
 ```bash
-pip install git+https://github.com/omamkaz/flet-timer.git
+pip install git+https://github.com/osamalzabidi/flet-timer.git
 ```
 
 ## Usage
@@ -39,6 +39,7 @@ from datetime import datetime
 
 def main(page: ft.Page):
     page.title = "Timer Example 1"
+
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
